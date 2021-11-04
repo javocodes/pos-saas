@@ -20,12 +20,12 @@ class CreateStoresTable extends Migration
             $table->foreignId("store_type_id");
             $table->string("name");
             $table->string("title");
-            $table->string("banner_message");
-            $table->string("slogan");
-            $table->string("mission");
-            $table->string("theme");
+            $table->string("banner_message")->nullable();
+            $table->string("slogan")->nullable();
+            $table->string("mission")->nullable();
+            $table->string("theme")->nullable();
             $table->string("desc");
-            $table->string("logo_path");
+            $table->string("logo_path")->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
