@@ -10,7 +10,7 @@ class Store extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $filable = [
+    protected $fillable = [
         
-        ]
+    ];
 }

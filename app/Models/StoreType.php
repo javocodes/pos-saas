@@ -9,7 +9,7 @@ class StoreType extends Model
 {
     use HasFactory;
 
-    protected $filable = [
+    protected $fillable = [
         
-        ]
+    ];
 }

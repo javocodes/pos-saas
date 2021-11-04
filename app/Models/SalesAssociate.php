@@ -9,7 +9,7 @@ class SalesAssociate extends Model
 {
     use HasFactory;
 
-    protected $filable = [
+    protected $fillable = [
         
-        ]
+    ];
 }
