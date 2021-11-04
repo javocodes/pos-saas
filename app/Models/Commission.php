@@ -9,7 +9,7 @@ class Commission extends Model
 {
     use HasFactory;
 
-    protected $filable = [
+    protected $fillable = [
         
-        ]
+    ];
 }
