@@ -16,20 +16,18 @@ class DatabaseSeeder extends Seeder
         //has to run in the order of the migrations
 
         \App\Models\User::factory(10)->create();
-        // $this->call([
-
-        // ]);
-        // \App\Models\Store::factory(6)->create();
+        $this->call([
+            ContactSeeder::class,
+            StoreTypeSeeder::class,
+        ]);
+        \App\Models\Store::factory(6)->create();
         // $this->call(
 
         // );
         // \App\Models\Category::factory(10)->create();
 
         $this->call([
-            
-            ContactSeeder::class,
-            StoreTypeSeeder::class,
-            StoreSeeder::Class,
+            // StoreSeeder::Class,
             BannerSeeder::class,
             BrandSeeder::Class,
             ProductSeeder::class,
