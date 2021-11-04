@@ -52,7 +52,7 @@ class StoreTypeSeeder extends Seeder
 
         foreach ($types as $key => $value) {
             # code...
-            StoreType::create([$value]);
+            StoreType::create($value);
         }
     }
 }

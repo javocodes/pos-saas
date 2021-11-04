@@ -59,7 +59,7 @@ class CommissionSeeder extends Seeder
 
         foreach ($commissions as $key => $value) {
             # code...
-            Commission::create([$value]);
+            Commission::create($value);
         }
     }
 }

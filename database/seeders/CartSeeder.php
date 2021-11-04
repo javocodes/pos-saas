@@ -79,7 +79,7 @@ class CartSeeder extends Seeder
 
         foreach ($carts as $key => $value) {
             # code...
-            Cart::create([$value]);
+            Cart::create($value);
         }
     }
 }

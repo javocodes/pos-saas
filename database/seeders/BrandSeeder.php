@@ -49,7 +49,7 @@ class BrandSeeder extends Seeder
 
         foreach ($brands as $key => $value) {
             # code...
-            Brand::create([$value]);
+            Brand::create($value);
         }
     }
 }

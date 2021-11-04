@@ -49,7 +49,7 @@ class CategoryTypeSeeder extends Seeder
 
         foreach ($categorytypes as $key => $value) {
             # code...
-            CategoryType::create([$value]);
+            CategoryType::create($value);
         }
     }
 }

@@ -89,7 +89,7 @@ class CouponSeeder extends Seeder
 
         foreach ($coupons as $key => $value) {
             # code...
-            Coupon::create([$value]);
+            Coupon::create($value);
         }
     }
 }

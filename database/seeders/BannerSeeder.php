@@ -59,7 +59,7 @@ class BannerSeeder extends Seeder
 
         foreach ($banners as $key => $value) {
             # code...
-            Banner::create([$value]);
+            Banner::create($value);
         }
     }
 }

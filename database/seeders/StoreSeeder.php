@@ -160,7 +160,7 @@ class StoreSeeder extends Seeder
 
         foreach ($stores as $key => $value) {
             # code...
-            Store::create([$value]);
+            Store::create($value);
         }
     }
 }
