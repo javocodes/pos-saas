@@ -49,6 +49,18 @@
 
                 <x-slot name="icon">
 
+                    <i class="far fa-user-hard-hat"></i>
+
+                </x-slot>
+
+                {{ __('New Sale Associate') }}
+
+            </x-links.merchantNavi>
+
+            <x-links.merchantNavi>
+
+                <x-slot name="icon">
+
                     <i class="fal fa-table"></i>
 
                 </x-slot>
