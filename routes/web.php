@@ -19,12 +19,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'storefront','as' => 'backEnd.'],function (){
+Route::group(['prefix' => 'storefront', 'as' => 'backEnd.'], function () {
 
     Route::get('/backend/dashboard', AdminDashboard::class)
         ->name('index');
 
     Route::get('/backend/inbox', Adminindox::class)
         ->name('inbox');
-
 });
