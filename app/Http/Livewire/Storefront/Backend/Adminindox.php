@@ -8,6 +8,7 @@ class Adminindox extends Component
 {
     public function render()
     {
-        return view('livewire.storefront.backend.adminindox');
+        return view('livewire.storefront.backend.adminindox')
+            ->extends('layouts.storeBackend');
     }
 }
