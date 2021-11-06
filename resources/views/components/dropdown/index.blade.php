@@ -6,7 +6,7 @@
     <!-- Dropdown toggle button -->
     <button @click.prevent="isDrop = !isDrop"
             :class="isDrop ? 'translate-y-0 ease-out' : '-translate-y-full ease-in'"
-        class="relative z-10 flex items-center mx-auto transition duration-300 w-10/12 p-2 text-sm text-white bg-transparent border border-transparent rounded-md
+        class="relative z-20 flex items-center mx-auto transition duration-300 w-10/12 p-2 text-sm text-white bg-transparent border border-transparent rounded-md
                  focus:outline-none">
 
         <span class="mx-1"><i class="fas fa-list mr-2"></i> {{ $title }}</span>
