@@ -6,6 +6,13 @@ use Livewire\Component;
 
 class Product extends Component
 {
+    public $categories;
+
+    public function createProduct()
+    {
+        //
+    }
+
     public function render()
     {
         return view('livewire.product');
