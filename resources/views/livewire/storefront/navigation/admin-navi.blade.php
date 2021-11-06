@@ -33,7 +33,8 @@
 
         <x-dropdown title="Manage Store">
 
-            <x-links.merchantNavi>
+            <x-links.merchantNavi :href="route('backEnd.createStore')"
+                                  :active="request()->routeIs('backEnd.createStore')">
 
                 <x-slot name="icon">
 
@@ -58,7 +59,8 @@
 
             </x-links.merchantNavi>
 
-            <x-links.merchantNavi>
+            <x-links.merchantNavi :href="route('backEnd.viewDetails')"
+                                  :active="request()->routeIs('backEnd.viewDetails')">
 
                 <x-slot name="icon">
 
