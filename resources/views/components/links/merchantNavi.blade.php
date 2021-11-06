@@ -16,12 +16,11 @@ $classes = ($active ?? false)
 
         {{ $icon }}
 
-        <span class="mx-3">
+        <span class="mx-4">
 
         {{ $slot }}
 
     </span>
 
     </a>
-
 </div>
