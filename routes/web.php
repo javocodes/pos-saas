@@ -30,10 +30,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-    Route::get('/backend/dashboard', AdminDashboard::class)
+    Route::get('/backEnd/dashboard', AdminDashboard::class)
         ->name('index');
 
-    Route::get('/backend/inbox', Adminindox::class)
+    Route::get('/backEnd/inbox', Adminindox::class)
         ->name('inbox');
 
     Route::get('/backEnd/store/createStore', CreateStore::class)
@@ -44,6 +44,4 @@ Route::get('/dashboard', function () {
 
     Route::get('/backEnd/store/ViewDetails', ViewDetail::class)
         ->name('viewDetails');
-
-
 });
