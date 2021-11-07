@@ -2,21 +2,26 @@
 
 namespace App\Http\Livewire\Storefront\Backend\Store;
 
+use App\Models\Store;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use Livewire\Component;
 use Validator;
+
 class CreateAsscoiate extends Component
 {
 
-    public $name;
+    public $first_name;
+    public $last_name;
     public $email;
-    public $password;
+    public $password = '';
     public $user_type;
 
     protected $rules = [
-        'name' => 'required|min:6',
-        'email' => 'required|email',
+        'first_name' => 'required|max:12',
+        'last_name' => 'required|max:12',
+        'email' => 'required|email|unique:users',
 //        'user_type' => 'required',
         'password' => 'required '
     ];
@@ -26,35 +31,33 @@ class CreateAsscoiate extends Component
     {
         $this->validate();
 
-       $associate = User::where([
+        User::create([
+            'name' => $this->first_name . " " . $this->last_name,
             'email' => $this->email,
-        ])->exists();
-       if($associate) {
-           session()->flash('error','Email Already In Use');
-       }
+            'user_type' => 3,
+            'password' => Hash::make($this->password),
+        ]);
 
+        session()->flash('success', 'Sales Associate Added Successfully');
 
-        if (!$associate) {
-           User::create([
-               'name' => $this->name,
-               'email' => $this->email,
-               'user_type' => 3,
-               'password' => Hash::make($this->password),
-           ]);
-            session()->flash('success','Sales Associate Added Successfully');
-
-       }
 
     }
 
-//    public function newsalesassociate(){
-//
-//    }
+    public function updated()
+    {
+        $this->validate();
+    }
 
+    public function mount()
+    {
+        $this->password = Str::random(10);
+    }
 
     public function render()
     {
-        return view('livewire.storefront.backend.store.create-asscoiate')
+        return view('livewire.storefront.backend.store.create-asscoiate',[
+            'stores' => Store::all(),
+        ])
             ->extends('layouts.storeBackend');
     }
 }
