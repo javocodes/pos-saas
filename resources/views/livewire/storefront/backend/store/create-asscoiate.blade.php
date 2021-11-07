@@ -1,6 +1,6 @@
 <div x-data="{ isOpen: false }">
 
-    <div class="bg-white rounded-lg w-9/12 m-auto my-10 p-5 flex  justify-center items-center">
+    <div class="bg-white rounded-lg w-9/12 m-auto my-10 p-3 flex  justify-center items-center">
         <div class="grid grid-cols-2">
             <div class="text-black font-bold text-3xl">
                 <h1>Create New Sales Associate</h1>
