@@ -1,4 +1,5 @@
 <div x-data="{ isSlide: 'form1' }"
+     x-on:first-form.window="isSlide = 'form1'"
      class="flex items-center h-screen justify-center overflow-auto inset-0 ">
 
     <x-form wire:submit.prevent="createStore"
@@ -6,14 +7,13 @@
 
         <x-slot name="title">
 
-            <h1 class="text-2xl pb-1 mt-8 text-gray-700 font-semibold"> Create Your Store </h1>
+            <h1 class="text-2xl pb-1 mt-4 text-gray-700 font-semibold"> Create Your Store </h1>
 
             <hr>
 
         </x-slot>
 
-
-        <div class="py-3 mt-3 p-3 space-y-4 h-full -mx-3 overflow-y-auto whitespace-nowrap scroll-hidden">
+        <div class="py-3 mt-2 p-3 space-y-4 h-full -mx-3 overflow-y-auto whitespace-nowrap scroll-hidden">
 
             <div x-show="isSlide === 'form1'"
                  class="w-full grid grid-cols-3 gap-3 transition transform ">
@@ -84,9 +84,37 @@
 
                 <div class="col-span-full">
 
-                    <h1 class="text-lg pb-1 text-gray-700 italic font-semibold"> Other Details </h1>
+                    <h1 class="text-lg pb-1 text-gray-700 italic font-semibold">
+
+                        Contact and Store Details
+
+                    </h1>
 
                 </div>
+
+                <x-input.label label="Contact Number">
+
+                    <x-input.text wire:model="contact.contact_num"
+                                  :error="$errors->first('contact.contact_num')"
+                                  type="tel"/>
+
+                </x-input.label>
+
+                <x-input.label label="Contact Email">
+
+                    <x-input.text wire:model="contact.contact_email"
+                                  :error="$errors->first('contact.contact_email')"
+                                  type="email"/>
+
+                </x-input.label>
+
+                <x-input.label label="Contact Location">
+
+                    <x-input.textarea wire:model="contact.contact_location"
+                                      :error="$errors->first('contact.contact_location')"
+                                      type="text"/>
+
+                </x-input.label>
 
                 <x-input.label label="Slogan">
 
@@ -175,7 +203,7 @@
                     <x-input.label label="Photo" for="bannerUpload">
 
                         <x-input.filepond wire:model="bannerUpload"
-                                          multiple />
+                                          multiple/>
 
                         <div>
                             @if($errors->first('bannerUpload'))
@@ -199,18 +227,19 @@
 
         <x-input.submit @click.prevent="isSlide = 'form2'"
                         x-show="isSlide === 'form1'"
-                        class="bg-transparent hover:bg-gray-800 text-black hover:text-white">
+                        class="bg-transparent hover:bg-gray-800 shadow-lg
+                               text-black hover:text-white">
 
             Next
 
         </x-input.submit>
 
-        <div class="flex justify-between w-full">
+        <div class="flex justify-between -mt-10 w-full">
 
             <x-input.submit @click.prevent="isSlide = 'form1'"
                             x-show="isSlide === 'form2'"
-                            class="bg-transparent hover:bg-gray-800 text-black
-                            hover:text-white">
+                            class="bg-transparent hover:bg-gray-800 shadow-lg
+                                   text-black hover:text-white">
 
                 Back
 
@@ -219,8 +248,8 @@
 
             <x-input.submit @click.prevent="isSlide = 'form3'"
                             x-show="isSlide === 'form2'"
-                            class="bg-transparent hover:bg-gray-800
-                        text-black hover:text-white">
+                            class="bg-transparent hover:bg-gray-800 shadow-lg
+                                   text-black hover:text-white">
 
                 Next
 
@@ -232,8 +261,8 @@
 
             <x-input.submit @click.prevent="isSlide = 'form2'"
                             x-show="isSlide === 'form3'"
-                            class="bg-transparent hover:bg-gray-800 text-black
-                            hover:text-white">
+                            class="bg-transparent hover:bg-gray-800 shadow-lg
+                                   text-black hover:text-white">
 
                 Back
 
