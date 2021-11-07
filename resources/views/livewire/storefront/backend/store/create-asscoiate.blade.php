@@ -1,22 +1,54 @@
 <div x-data="{ isOpen: false }">
 
-    <div class="bg-white rounded-lg w-9/12 m-auto my-10 p-3 flex  justify-center items-center">
-        <div class="grid grid-cols-2">
-            <div class="text-black font-bold text-3xl">
-                <h1>Create New Sales Associate</h1>
-            </div>
-            <div class="" style="margin-left: 26px;  display: flex; justify-content: right">
-                <button @click="isOpen =true" class="-my-1.5 text-black font-bold text-2xl bg-purple-700 p-2 rounded-2xl hover:text-white hover:bg-black" >Add Associate</button>
-            </div>
+    <div class="w-full px-8 py-4 mx-auto bg-white shadow-md dark:bg-gray-800">
+
+        <div class="flex items-center justify-between">
+
+            <span class="lg:text-lg text-sm lg:font-medium font-light text-gray-800 dark:text-gray-400">
+
+                Associate Details
+
+            </span>
+
+            <a @click="isOpen =true" class="px-3 py-1 text-sm font-bold text-gray-100 transition-colors duration-200 transform bg-indigo-600
+                      rounded cursor-pointer hover:bg-indigo-500">
+
+                Create Associate
+
+            </a>
+
         </div>
     </div>
 
-    <div style="background-color: rgba(0,0,0, .5)"
-    class=" mx-auto absolute top-0 left-0 w-full h-full flex items-center shadow-lg overflow-y-auto"
-    x-show="isOpen"
+{{--    <div class="bg-white rounded-lg w-9/12 m-auto my-10 p-3 flex  justify-center items-center">--}}
+{{--        <div class="flex items-center justify-between">--}}
+{{--            <span class="text-sm font-light text-gray-600 dark:text-gray-400">Mar 10, 2019</span>--}}
+{{--            <a class="px-3 py-1 text-sm font-bold text-gray-100 transition-colors duration-200 transform bg-gray-600 rounded cursor-pointer hover:bg-gray-500">Design</a>--}}
+{{--        </div>--}}
+{{--        <div class="flex justify-evenly items-center">--}}
+
+{{--            <div class="text-black font-bold text-2xl">--}}
+{{--                <h1>Create New Sales Associate</h1>--}}
+{{--            </div>--}}
+
+{{--            <div class="" style="margin-left: 26px;  display: flex; justify-content: right">--}}
+
+{{--                <button @click="isOpen =true" class="text-white font-bold  bg-indigo-600 px-4 py-2 rounded " >--}}
+
+{{--                    Add Associate--}}
+
+{{--                </button>--}}
+
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+    <div class=" sm:mx-auto lg:mx-32 fixed top-0 left-0 w-full h-full bg-black bg-opacity-75
+                flex items-center shadow-lg overflow-y-auto"
+         x-show="isOpen"
     >
 
-        <div class="ml-96 bg-white p-16 rounded shadow-2xl w-8/12">
+        <section @click.away="isOpen = false"
+            class="w-3/5 p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800">
             @if (session()->has('error'))
                 <div class="bg-red-200 px-6 py-4 mx-2 -my-5 mb-5 rounded-md text-lg flex items-center mx-auto w-3/4 xl:w-2/4">
                     <svg viewBox="0 0 24 24" class="text-red-600 w-5 h-5 sm:w-5 sm:h-5 mr-3">
@@ -35,51 +67,70 @@
                     <span class="text-green-800"> {{ session('success') }} </span>
                 </div>
             @endif
-            <h2 class="text-3xl font-bold mb-5 -my-5 text-gray-800 text-center">New Sales Associate</h2>
+            <h2 class="text-lg font-semibold text-center text-gray-700 capitalize dark:text-white">New Sales Associate</h2>
 
-            <form wire:submit.prevent="newsalesassociate">
-               <div class="grid grid-cols-2 space-x-2">
-                   <x-input.label class="text-lg">
-                       <x-slot  name="label">
-                           Name:
-                           <x-input.text wire:model="name" type="text"/>
-                           @error('name') <span class="text-red-500 text-xs italic  m-1">{{ $message }}</span> @enderror
-                       </x-slot>
-                   </x-input.label>
+            <form
+                wire:submit.prevent="newsalesassociate">
+                <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+                    <div>
+                        <x-input.label class="text-md" label="First Name:">
 
-                   <x-input.label class="text-lg">
-                       <x-slot name="label">
-                           Email:
-                           <x-input.text wire:model="email" type="email"/>
-                           @error('email') <span class="text-red-500 text-xs italic  m-1">{{ $message }}</span> @enderror
-                       </x-slot>
-                   </x-input.label>
-               </div>
+                                <x-input.text wire:model="first_name" type="text"/>
+                                @error('first_name') <span class="text-red-500 text-xs italic  m-1">{{ $message }}</span> @enderror
 
-                <x-input.label class="text-lg ">
-                    <x-slot name="label">
-                        Password:
-                        <x-input.text wire:model="password" type="password" />
-                        @error('password') <span class="text-red-500 text-xs italic  m-1">{{ $message }}</span> @enderror
-                    </x-slot>
-                </x-input.label>
+                        </x-input.label>
+                    </div>
 
-               <div class="my-5 -mb-3.5 justify-end flex space-x-3">
+                    <div>
+                        <x-input.label class="text-md" label="Last Name:">
+                                <x-input.text wire:model="last_name" type="text"/>
+                                @error('last_name') <span class="text-red-500 text-xs italic  m-1">{{ $message }}</span> @enderror
+                        </x-input.label>
+                    </div>
 
-                   <button type="submit" class="bg-white text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center">
-                       <span class="mr-2">Create</span>
-                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                           <path fill="green" d="M11,16.4l-4.7-4.7l1.4-1.4l3.3,3.3l8.4-8.4C17.5,3.3,14.9,2,12,2C6.5,2,2,6.5,2,12s4.5,10,10,10s10-4.5,10-10 c0-1.9-0.5-3.6-1.4-5.1L11,16.4z"></path>
-                       </svg>
-                   </button>
-                   <button @click="isOpen = false" class="bg-white text-gray-800 font-bold rounded border-b-2 border-red-500 hover:border-red-600 hover:bg-red-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center">
-                       <span class="mr-2">Close</span>
-                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                           <path fill="currentcolor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/>
-                       </svg>
-                   </button>
-               </div>
+                    <div>
+                        <x-input.label class="text-md" label="Email Address:">
+
+                            <x-input.text wire:model="email" type="text"/>
+                            @error('email') <span class="text-red-500 text-xs italic  m-1">{{ $message }}</span> @enderror
+
+                        </x-input.label>
+                    </div>
+
+                    <div>
+                        <x-input.label class="text-md" label="Store Available">
+
+                            <x-input.select field="name" :option="$stores" />
+                            @error('name') <span class="text-red-500 text-xs italic  m-1">{{ $message }}</span> @enderror
+
+                        </x-input.label>
+                    </div>
+
+                    <div>
+                        <x-input.label class="text-md" label="Password:">
+
+                            <x-input.text wire:model="password" readonly type="text"/>
+                            @error('password') <span class="text-red-500 text-xs italic  m-1">{{ $message }}</span> @enderror
+
+                        </x-input.label>
+                    </div>
+
+                </div>
+
+                <div class="flex justify-end mt-6 space-x-1">
+                    <button class="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-green-500
+                                   rounded-md hover:bg-green-600 focus:outline-none focus:bg-gray-600">
+                                   Save
+                    </button>
+                    <button @click.prevent="isOpen = false"
+                            class="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-red-500
+                            rounded-md hover:bg-red-600 focus:outline-none focus:bg-gray-600">
+                            Close
+                    </button>
+                </div>
             </form>
-        </div>
+        </section>
+
     </div>
+
 </div>
