@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Livewire\Storefront\Backend\AdminDashboard;
+use App\Http\Livewire\Storefront\Backend\Adminindox;
+use App\Http\Livewire\Storefront\Backend\Store\CreateAsscoiate;
+use App\Http\Livewire\Storefront\Backend\Store\CreateStore;
+use App\Http\Livewire\Storefront\Backend\Store\ViewDetail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,15 +22,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::view('/pos', 'pos.pos')->name('pos');
+Route::view('/pos2', 'pos.pos2')->name('pos2');
+
 Route::group(['prefix' => 'storefront', 'as' => 'backEnd.'], function () {
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
     Route::get('/backEnd/dashboard', AdminDashboard::class)
         ->name('index');
-
-    Route::get('/backend/dashboard/profile', AdminProfile::class)
-        ->name('profile');
-
-    Route::get('/backend/inbox', Adminindox::class);
 
     Route::get('/backEnd/inbox', Adminindox::class)
         ->name('inbox');
