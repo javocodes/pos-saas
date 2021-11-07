@@ -24,10 +24,10 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'storefront', 'as' => 'backEnd.'], function () {
 
-    Route::get('/backend/dashboard', AdminDashboard::class)
+    Route::get('/backEnd/dashboard', AdminDashboard::class)
         ->name('index');
 
-    Route::get('/backend/inbox', Adminindox::class)
+    Route::get('/backEnd/inbox', Adminindox::class)
         ->name('inbox');
 
     Route::get('/backEnd/store/createStore', CreateStore::class)
@@ -38,6 +38,4 @@ Route::group(['prefix' => 'storefront', 'as' => 'backEnd.'], function () {
 
     Route::get('/backEnd/store/ViewDetails', ViewDetail::class)
         ->name('viewDetails');
-
-
 });
