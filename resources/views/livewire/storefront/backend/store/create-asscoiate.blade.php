@@ -56,18 +56,6 @@
                    </x-input.label>
                </div>
 
-{{--                <x-input.label class="text-lg">--}}
-{{--                    <x-slot name="label">--}}
-{{--                        User Type:--}}
-{{--                        <x-input.select wire:model="user_type">--}}
-{{--                            <option value="3">Sales Associate</option>--}}
-{{--                            <option value="2">dash</option>--}}
-{{--                        </x-input.select>--}}
-{{--                        @error('user_type') <span class="text-red-500 text-xs italic  m-1">{{ $message }}</span> @enderror--}}
-
-{{--                    </x-slot>--}}
-{{--                </x-input.label>--}}
-
                 <x-input.label class="text-lg ">
                     <x-slot name="label">
                         Password:
@@ -92,11 +80,6 @@
                    </button>
                </div>
             </form>
-
         </div>
-
-
-
     </div>
-
 </div>
