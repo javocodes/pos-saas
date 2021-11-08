@@ -19,7 +19,7 @@
     <nav class="mt-10 space-y-2">
 
 
-        <x-links.merchantNavi :href="route('backEnd.index')" :active="request()->routeIs('backEnd.index')">
+        <x-links.merchantNavi :href="route('backEnd.dashboard')" :active="request()->routeIs('backEnd.dashboard')">
 
             <x-slot name="icon">
 
