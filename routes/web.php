@@ -41,4 +41,6 @@ Route::group(['prefix' => 'storefront', 'as' => 'backEnd.'], function () {
 
     Route::get('/backEnd/store/ViewDetails', ViewDetail::class)
         ->name('viewDetails');
+
+
 });
