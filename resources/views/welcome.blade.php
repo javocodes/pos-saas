@@ -12,6 +12,7 @@
 
     {{-- TailwindCss --}}
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/scroll.css') }}">
 
     <style>
         body {
