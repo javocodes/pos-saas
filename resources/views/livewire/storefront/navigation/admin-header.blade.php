@@ -19,7 +19,7 @@
 
         <div>
 
-            <a href="{{ route('backEnd.inbox') }}"
+            <a href="{{ route('pos') }}"
                class="flex mx-4 mt-1 text-gray-600 focus:outline-none">
 
                 <span class="mr-2"><i class="fab fa-windows text-2xl"></i> POS System </span>
