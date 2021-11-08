@@ -10,7 +10,7 @@
                         <h1>Select Product</h1>
 
                         <div class="relative text-gray-600">
-                            <input type="search" wire:model="search" placeholder="Search"
+                            <input type="search" wire:keydown.lazy="search($event.target.value)" placeholder="Search"
                                 class="bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none">
                             <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
                                 <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <div class="h-3/6 overflow-y-scroll mx-5">
-                        {{dd($products)}}
+                        {{-- {{dd($products)}} --}}
                         <x-table.table>
                             <x-table.thead>
 
@@ -44,9 +44,9 @@
                                     <x-table.table-data responsiveName="Product Name">{{$product->name}}</x-table.table-data>
                                     <x-table.table-data responsiveName="Quantity"><input class="w-5/12 h-8"
                                             type="number" max="{{$product->qty}}"></x-table.table-data>
-                                    <x-table.table-data responsiveName="Price">JMD $2500.00</x-table.table-data>
-                                    <x-table.table-data responsiveName="Discount">0</x-table.table-data>
-                                    <x-table.table-data responsiveName="Total">JMD $2500.00</x-table.table-data>
+                                    <x-table.table-data responsiveName="Price">{{ '$'.number_format($product->price, 2, '.', ',')}}</x-table.table-data>
+                                    <x-table.table-data responsiveName="Discount">{{ '$'.number_format(($product->sale_price ? $product->sale_price - $product->price : null), 2, '.', ',')}}</x-table.table-data>
+                                    <x-table.table-data responsiveName="Total">{{ '$'.number_format($product->sale_price ?? $product->price, 2, '.', ',')}}</x-table.table-data>
                                     <x-table.table-data responsiveName="Action">
                                         <x-table.button color="gray" class="w-24 h-18 font-bold">Select</x-table.button>
                                     </x-table.table-data>

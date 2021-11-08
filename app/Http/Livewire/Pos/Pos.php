@@ -10,7 +10,7 @@ class Pos extends Component
    public $products;
    
    public function mount(){
-        $this->products = Product::with(['store','category','brand'])->get();
+        $this->products = Product::with(['store','category','brand'])->where('store_id', 1)->get();
    }
     public function render()
     {
