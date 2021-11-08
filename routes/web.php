@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 
 Route::view('/pos', 'pos.pos')->name('pos');
+Route::view('/pos2', 'pos.pos2')->name('pos2');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
