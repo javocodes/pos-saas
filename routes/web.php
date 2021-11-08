@@ -22,7 +22,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::view('/pos', 'pos.pos')->name('pos');
+Route::view('/pos2', 'pos.pos2')->name('pos2');
+
 Route::group(['prefix' => 'storefront', 'as' => 'backEnd.'], function () {
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
     Route::get('/backend/dashboard', AdminDashboard::class)
         ->name('index');
