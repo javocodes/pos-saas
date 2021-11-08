@@ -2,11 +2,9 @@
 
 use App\Http\Livewire\Storefront\Backend\AdminDashboard;
 use App\Http\Livewire\Storefront\Backend\Adminindox;
-use App\Http\Livewire\Storefront\Backend\AdminProfile;
 use App\Http\Livewire\Storefront\Backend\Store\CreateAsscoiate;
 use App\Http\Livewire\Storefront\Backend\Store\CreateStore;
 use App\Http\Livewire\Storefront\Backend\Store\ViewDetail;
-use App\Http\Livewire\Storefront\Frontend\Header;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +19,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', Header::class)->name('index');
+
+Route::view('/pos', 'pos.pos')->name('pos');
+Route::view('/pos2', 'pos.pos2')->name('pos2');
 
 Route::view('/pos', 'pos.pos')->name('pos');
 Route::view('/pos2', 'pos.pos2')->name('pos2');
