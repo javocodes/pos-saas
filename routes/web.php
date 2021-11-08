@@ -45,3 +45,10 @@ Route::group(['prefix' => 'storefront', 'as' => 'backEnd.'], function () {
     Route::get('/backEnd/store/ViewDetails', ViewDetail::class)
         ->name('viewDetails');
 });
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';

@@ -17,5 +17,7 @@ class Pos extends Component
         return view('livewire.pos.pos');
     }
 
+     
+
     
 }
