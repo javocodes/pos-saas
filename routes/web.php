@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\Storefront\Backend\AdminDashboard;
 use App\Http\Livewire\Storefront\Backend\Adminindox;
+use App\Http\Livewire\Storefront\Backend\AdminProfile;
 use App\Http\Livewire\Storefront\Backend\Store\CreateAsscoiate;
 use App\Http\Livewire\Storefront\Backend\Store\CreateStore;
 use App\Http\Livewire\Storefront\Backend\Store\ViewDetail;
@@ -26,6 +27,11 @@ Route::group(['prefix' => 'storefront', 'as' => 'backEnd.'], function () {
 
     Route::get('/backEnd/dashboard', AdminDashboard::class)
         ->name('index');
+
+    Route::get('/backend/dashboard/profile', AdminProfile::class)
+        ->name('profile');
+
+    Route::get('/backend/inbox', Adminindox::class);
 
     Route::get('/backEnd/inbox', Adminindox::class)
         ->name('inbox');
