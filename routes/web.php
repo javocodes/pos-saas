@@ -3,6 +3,8 @@
 use App\Http\Livewire\Storefront\Backend\AdminDashboard;
 use App\Http\Livewire\Storefront\Backend\Adminindox;
 use App\Http\Livewire\Storefront\Backend\Store\CreateAsscoiate;
+use App\Http\Livewire\Storefront\Backend\Store\CreateStore;
+use App\Http\Livewire\Storefront\Backend\Store\ViewDetail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,7 +29,15 @@ Route::group(['prefix' => 'storefront', 'as' => 'backEnd.'], function () {
 
     Route::get('/backend/inbox', Adminindox::class)
         ->name('inbox');
+
+    Route::get('/backEnd/store/createStore', CreateStore::class)
+        ->name('createStore');
+
     Route::get('/backEnd/store/CreateAssociate', CreateAsscoiate::class)
         ->name('createAssociate');
+
+    Route::get('/backEnd/store/ViewDetails', ViewDetail::class)
+        ->name('viewDetails');
+
 
 });
