@@ -27,7 +27,6 @@ Route::view('/pos2', 'pos.pos2')->name('pos2');
 
 Route::group(['prefix' => 'storefront', 'as' => 'backEnd.'], function () {
 
-
     Route::get('/backEnd/dashboard', AdminDashboard::class)
         ->name('index');
 
