@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <div class="h-3/6 overflow-y-scroll mx-5">
-
+                        {{dd($products)}}
                         <x-table.table>
                             <x-table.thead>
 
@@ -38,10 +38,12 @@
                             </x-table.thead>
                             <x-table.tbody>
 
-                                @for($x = 0; $x < 15; $x++) <x-table.table-row>
-                                    <x-table.table-data responsiveName="Product Name">Cocoa Bread</x-table.table-data>
+                                {{-- @for($x = 0; $x < 15; $x++)  --}}
+                                @foreach ($products as $product)
+                                <x-table.table-row>
+                                    <x-table.table-data responsiveName="Product Name">{{$product->name}}</x-table.table-data>
                                     <x-table.table-data responsiveName="Quantity"><input class="w-5/12 h-8"
-                                            type="number"></x-table.table-data>
+                                            type="number" max="{{$product->qty}}"></x-table.table-data>
                                     <x-table.table-data responsiveName="Price">JMD $2500.00</x-table.table-data>
                                     <x-table.table-data responsiveName="Discount">0</x-table.table-data>
                                     <x-table.table-data responsiveName="Total">JMD $2500.00</x-table.table-data>
@@ -50,7 +52,7 @@
                                     </x-table.table-data>
 
                                     </x-table.table-row>
-                                    @endfor
+                                    @endforeach
 
                             </x-table.tbody>
                         </x-table.table>

@@ -2,13 +2,20 @@
 
 namespace App\Http\Livewire\Pos;
 
+use App\Models\Product;
 use Livewire\Component;
 
 class Pos extends Component
 {
-    // public $x = 0;
+   public $products;
+   
+   public function mount(){
+        $this->products = Product::with(['store','category','brand'])->get();
+   }
     public function render()
     {
         return view('livewire.pos.pos');
     }
+
+    
 }
