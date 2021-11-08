@@ -22,12 +22,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::view('/pos', 'pos.pos')->name('pos');
+Route::view('/pos2', 'pos.pos2')->name('pos2');
+
 Route::group(['prefix' => 'storefront', 'as' => 'backEnd.'], function () {
 
-    Route::get('/backend/dashboard', AdminDashboard::class)
+    Route::get('/backEnd/dashboard', AdminDashboard::class)
         ->name('index');
 
-    Route::get('/backend/inbox', Adminindox::class)
+    Route::get('/backEnd/inbox', Adminindox::class)
         ->name('inbox');
 
     Route::get('/backEnd/store/createStore', CreateStore::class)
