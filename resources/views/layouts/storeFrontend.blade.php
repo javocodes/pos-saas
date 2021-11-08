@@ -22,7 +22,13 @@
 
         @yield('content')
 
-        @livewire('storefront.frontend.products')
+       @if(request()->routeIs('index'))
+
+            @livewire('storefront.frontend.tiles')
+
+        @endif
+
+        @livewire('storefront.frontend.footer')
 
     </section>
 
