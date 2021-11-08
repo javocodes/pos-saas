@@ -1,5 +1,5 @@
 <div>
-    <div class="grid grid-cols-1 p-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-6">
+    <div class="grid grid-cols-1 p-10 sm:grid-cols-2  lg:grid-cols-2 gap-6">
         <x-input.label label="Name">
             <x-input.text wire:model="name" class="h-12" placeholder="Name"/>
         </x-input.label>
@@ -26,7 +26,7 @@
             <div
                 x-show="changePasswordCheck"
                 x-transition.enter.origin.bottom.duration.300ms
-                class="grid grid-cols-1 p-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-1 gap-6">
+                class="grid grid-cols-1 p-5 sm:grid-cols-2 lg:grid-cols-1 gap-6">
 
                 <x-input.label label="Current Password">
                     <x-input.text type="password" wire:model="passwordCheck" class="h-12"/>
