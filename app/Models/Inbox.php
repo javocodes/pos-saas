@@ -17,6 +17,8 @@ class Inbox extends Model
 {
     use HasFactory;
 
+    public $table = "inbox";
+
     protected $fillable = [
         
     ];
