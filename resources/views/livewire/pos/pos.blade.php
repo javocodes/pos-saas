@@ -48,7 +48,7 @@
                                     <x-table.table-data responsiveName="Discount">{{ '$'.number_format(($product->sale_price ? $product->sale_price - $product->price : null), 2, '.', ',')}}</x-table.table-data>
                                     <x-table.table-data responsiveName="Total">{{ '$'.number_format($product->sale_price ?? $product->price, 2, '.', ',')}}</x-table.table-data>
                                     <x-table.table-data responsiveName="Action">
-                                        <x-table.button color="gray" class="w-24 h-18 font-bold">Select</x-table.button>
+                                        <x-table.button color="gray" class="w-24 h-18 font-bold" >Select</x-table.button>
                                     </x-table.table-data>
 
                                     </x-table.table-row>
