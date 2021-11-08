@@ -23,22 +23,22 @@
                     <div class="h-4/6 mx-5 p-3">
                         @for($x=0; $x<24; $x++)
 
-                        <x-table.button class="w-28 p-10 h-20 font-bold m-2">Cocoa Bread</x-table.button>     
+                        <x-table.button color="gray" class="shadow-lg w-28 p-10 h-20 font-bold m-2">Cocoa Bread</x-table.button>     
 
                         @endfor
                     </div>
     
                     <div class="flex justify-center space-x-2 mt-8 px-5">
                         <x-table.button color="indigo" class="w-32 h-24 font-bold"><div><i class="fas fa-home"></i></div>BUTTON</x-table.button>
-                        <x-table.button color="pink" class="w-32 h-24 font-bold"><div><i class="far fa-tags"></i></div>BUTTON</x-table.button>
-                        <x-table.button color="green" class="w-32 h-24 font-bold"><div><i class="fas fa-dollar-sign"></i></div>BUTTON</x-table.button>
-                        <x-table.button color="red" class="w-32 h-24 font-bold"><div><i class="far fa-key"></i></div>BUTTON</x-table.button>
-                        <x-table.button color="purple" class="w-32 h-24 font-bold"><div><i class="fas fa-file-invoice-dollar"></i></div>BUTTON</x-table.button>
-                        <x-table.button color="blue" class="w-32 h-24 font-bold"><div><i class="far fa-dolly-flatbed-alt"></i></div>BUTTON</x-table.button>
-                        <x-table.button color="green" class="w-32 h-24 font-bold"><div><i class="far fa-comment-lines"></i></div>BUTTON</x-table.button>
+                        <x-table.button color="indigo" class="w-32 h-24 font-bold"><div><i class="far fa-tags"></i></div>BUTTON</x-table.button>
+                        <x-table.button color="indigo" class="w-32 h-24 font-bold"><div><i class="fas fa-dollar-sign"></i></div>BUTTON</x-table.button>
+                        <x-table.button color="indigo" class="w-32 h-24 font-bold"><div><i class="far fa-key"></i></div>BUTTON</x-table.button>
+                        <x-table.button color="indigo" class="w-32 h-24 font-bold"><div><i class="fas fa-file-invoice-dollar"></i></div>BUTTON</x-table.button>
+                        <x-table.button color="indigo" class="w-32 h-24 font-bold"><div><i class="far fa-dolly-flatbed-alt"></i></div>BUTTON</x-table.button>
+                        <x-table.button color="indigo" class="w-32 h-24 font-bold"><div><i class="far fa-comment-lines"></i></div>BUTTON</x-table.button>
     
                     </div>
-                </div wire:>
+                </div>
     
     
                 <div class="w-5/12 bg-gray-100 h-full overflow-hidden bg-cover bg-center">    
@@ -85,8 +85,8 @@
                     </div>
     
                     <div class="flex space-x-3 mx-5">
-                        <x-table.button color="blue" class="w-1/2 h-14 font-bold"> <i class="far fa-money-bill-wave"></i> Pay Now</x-table.button>
-                        <x-table.button color="red" class="w-1/2 h-14 font-bold">Cancel</x-table.button>
+                        <x-table.button color="indigo" class="w-1/2 h-14 font-bold"> <i class="far fa-money-bill-wave"></i> Pay Now</x-table.button>
+                        <x-table.button color="gray" class="w-1/2 h-14 font-bold">Cancel</x-table.button>
                     </div>
                 </div>
     
