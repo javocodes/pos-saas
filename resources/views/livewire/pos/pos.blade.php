@@ -23,7 +23,7 @@
                             </button>
                         </div>
                     </div>
-                    <div class="h-3/6 overflow-y-scroll px-5">
+                    <div class="h-3/6 overflow-y-scroll mx-5">
 
                         <x-table.table>
                             <x-table.thead>
@@ -46,7 +46,7 @@
                                     <x-table.table-data responsiveName="Discount">0</x-table.table-data>
                                     <x-table.table-data responsiveName="Total">JMD $2500.00</x-table.table-data>
                                     <x-table.table-data responsiveName="Action">
-                                        <x-table.button>Selec Productt</x-table.button>
+                                        <x-table.button class="w-24 h-18 font-bold">Select</x-table.button>
                                     </x-table.table-data>
 
                                     </x-table.table-row>
@@ -56,59 +56,77 @@
                         </x-table.table>
                     </div>
 
-                    <div class="mt-5 ">
-                        <x-table.button>Selec Productt</x-table.button>
-                        <x-table.button>Selec Productt</x-table.button>
-                        <x-table.button>Selec Productt</x-table.button>
-                        <x-table.button>Selec Productt</x-table.button>
-                        <x-table.button>Selec Productt</x-table.button>
-                        <x-table.button>Selec Productt</x-table.button>
+                    <div class="flex justify-center space-x-2 mt-12 px-5">
+                        <x-table.button color="indigo" class="w-32 h-24 font-bold">BUTTON</x-table.button>
+                        <x-table.button color="pink" class="w-32 h-24 font-bold">BUTTON</x-table.button>
+                        <x-table.button color="green" class="w-32 h-24 font-bold">BUTTON</x-table.button>
+                        <x-table.button color="red" class="w-32 h-24 font-bold">BUTTON</x-table.button>
+                        <x-table.button color="purple" class="w-32 h-24 font-bold">BUTTON</x-table.button>
+                        <x-table.button color="blue" class="w-32 h-24 font-bold">BUTTON</x-table.button>
+                        <x-table.button color="green" class="w-32 h-24 font-bold">BUTTON</x-table.button>
+
                     </div>
                 </div>
 
 
                 <div class="w-4/12 bg-white h-full pb rounded-lg overflow-hidden bg-cover bg-center">
+
                     <div class="w-full py-6 px-4 bg-blue-600">
                         <h1 class="text-white font-bold text-3xl">Summary</h1>
                     </div>
-                    <div class="p-5 h-full">
-                        <div class="gap-6 flex flex-wrap justify-between">
-                            <div class="flex justify-between w-3/6">
-                                <span>Credit:</span>
+
+                    <div class="sales_details mx-5 h-3/6 mt-10 border border-gray-500">
+                          
+
+
+
+
+
+
+
+                    </div>
+
+                    <div class="flex py-5 px-5 font-bold space-x-8">
+                        <div class="w-1/2">
+                            <div class="flex justify-between">
+                                <span>Sub Total</span>
+                                <span>$158,550.00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Coupon:</span>
                                 <span>$0.00</span>
                             </div>
-                            <div class="flex justify-between w-3/6">
-                                <span>Sub Total:</span>
-                                <span>$199.00</span>
+                            <div class="flex justify-between">
+                                <span>Taxes:</span>
+                                <span>25%</span>
                             </div>
-                            <div class="flex justify-between w-1/2">
-                                <span>Discount:</span>
-                                <span>$0.00</span>
-                            </div>
-                            <div class="flex justify-between w-1/2">
-                                <span>Sub Total:</span>
-                                <span>$199.00</span>
-                            </div>
-                            <div class="flex justify-between w-1/2">
-                                <span>Tip:</span>
-                                <span>$0.00</span>
-                            </div>
-                            <div class="flex justify-between w-1/2">
-                                <span>Sub Total:</span>
-                                <span>$199.00</span>
-                            </div>
-                            <div class="flex justify-between w-1/2">
-                                <span>Credit:</span>
-                                <span>$0.00</span>
-                            </div>
-                            <div class="flex justify-between w-1/2">
-                                <span>Sub Total:</span>
-                                <span>$199.00</span>
+                            <div class="flex justify-between">
+                                <span>Total Items:</span>
+                                <span>10</span>
                             </div>
                         </div>
+
+                        <div class="w-1/2">
+                            <div class="flex justify-between">
+                                <span>Credit:</span>
+                                <span>$0.00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Discount:</span>
+                                <span>$199.00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Tip:</span>
+                                <span>$0.00</span>
+                            </div>                            
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-3 mx-5">
+                        <x-table.button color="blue" class="w-1/2 h-14 font-bold">Pay Now</x-table.button>
+                        <x-table.button color="red" class="w-1/2 h-14 font-bold">Cancel</x-table.button>
                     </div>
                 </div>
-
 
             </div>
         </main>
