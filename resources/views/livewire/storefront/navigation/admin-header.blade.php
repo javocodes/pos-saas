@@ -32,7 +32,7 @@
 
             <div>
 
-                <a href="{{ route('backEnd.inbox') }}"
+                <a href="{{ route('backend.inbox') }}"
                    class="flex mx-4 mt-1 text-gray-600 focus:outline-none">
 
                     <span class="mr-4">
@@ -69,7 +69,7 @@
             <div x-show="dropdownOpen"
                  class="absolute right-0 mt-2 w-48 bg-white rounded-md overflow-hidden shadow-xl z-10"
                  style="display: none;">
-                <a href="{{route('backEnd.profile')}}"
+                <a href="{{route('backend.profile')}}"
                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Profile</a>
                 <a href="#"
                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Products</a>
