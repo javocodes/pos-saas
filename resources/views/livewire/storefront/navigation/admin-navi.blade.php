@@ -102,7 +102,8 @@
 
         </x-dropdown2>
 
-        <x-links.merchantNavi>
+        <x-links.merchantNavi :href="route('backend.SalesReport')"
+                              :active="request()->routeIs('backend.SalesReport')">
 
             <x-slot name="icon">
 
