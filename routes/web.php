@@ -25,6 +25,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+///////////////////////////////// MIDDLEWARES //////////////////////////////////
+
+Route::group(['middleware' => 'admin'], function(){
+    //Admin Routes Go Here
+});
+
+Route::group(['middleware' => 'customer'], function () {
+    //Customer Routes Go Here
+});
+
+Route::group(['middleware' => 'merchant'], function () {
+    //Merchant Routes Go Here
+});
+
+Route::group(['middleware' => 'associate'], function () {
+    //Associate Routes Go Here
+});
+
+////////////////////////////////// MIDDLEWARES ////////////////////////////////////
+
+
+
 Route::get('/', Header::class)->name('index');
 
 Route::view('/pos', 'pos.pos')->name('pos');
