@@ -24,7 +24,7 @@ use App\Http\Livewire\Storefront\Backend\Store\CreateAsscoiate;
 
 ///////////////////////////////// MIDDLEWARES //////////////////////////////////
 
-Route::group(['middleware' => 'admin'], function(){
+Route::group(['middleware' => 'admin'], function () {
     //Admin Routes Go Here
 });
 
@@ -71,7 +71,6 @@ Route::group(['prefix' => 'storefront', 'as' => 'backend.'], function () {
 
     Route::get('/backend/store/ViewSalesReport', SalesReport::class)
         ->name('SalesReport');
-
 });
 
 Route::get('/product/create', CreateProduct::class)
@@ -82,4 +81,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__ . '/auth.php';
+Route::get('/cart', function () {
+    return view('redirecTo.storefront.frontend.cart');
+})->name('cart');
+
+require __DIR__.'/auth.php';
