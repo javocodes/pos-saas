@@ -76,7 +76,8 @@
 
         <x-dropdown2 title="Products">
 
-            <x-links.merchantNavi>
+            <x-links.merchantNavi :href="route('product.create')"
+                                  :active="request()->routeIs('product.create')">
 
                 <x-slot name="icon">
 
@@ -102,7 +103,8 @@
 
         </x-dropdown2>
 
-        <x-links.merchantNavi>
+        <x-links.merchantNavi :href="route('backend.SalesReport')"
+                              :active="request()->routeIs('backend.SalesReport')">
 
             <x-slot name="icon">
 
