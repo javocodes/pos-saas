@@ -1,15 +1,15 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Product\CreateProduct;
 use App\Http\Livewire\SaleReport\SalesReport;
-use App\Http\Livewire\Storefront\Backend\AdminDashboard;
+use App\Http\Livewire\Storefront\Frontend\Header;
 use App\Http\Livewire\Storefront\Backend\Adminindox;
 use App\Http\Livewire\Storefront\Backend\AdminProfile;
-use App\Http\Livewire\Storefront\Backend\Store\CreateAsscoiate;
-use App\Http\Livewire\Storefront\Backend\Store\CreateStore;
+use App\Http\Livewire\Storefront\Backend\AdminDashboard;
 use App\Http\Livewire\Storefront\Backend\Store\ViewDetail;
-use App\Http\Livewire\Storefront\Frontend\Header;
-use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Storefront\Backend\Store\CreateStore;
+use App\Http\Livewire\Storefront\Backend\Store\CreateAsscoiate;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +21,28 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+///////////////////////////////// MIDDLEWARES //////////////////////////////////
+
+Route::group(['middleware' => 'admin'], function () {
+    //Admin Routes Go Here
+});
+
+Route::group(['middleware' => 'customer'], function () {
+    //Customer Routes Go Here
+});
+
+Route::group(['middleware' => 'merchant'], function () {
+    //Merchant Routes Go Here
+});
+
+Route::group(['middleware' => 'associate'], function () {
+    //Associate Routes Go Here
+});
+
+////////////////////////////////// MIDDLEWARES ////////////////////////////////////
+
+
 
 Route::get('/', Header::class)->name('index');
 
@@ -49,7 +71,6 @@ Route::group(['prefix' => 'storefront', 'as' => 'backend.'], function () {
 
     Route::get('/backend/store/ViewSalesReport', SalesReport::class)
         ->name('SalesReport');
-
 });
 
 Route::get('/product/create', CreateProduct::class)
@@ -60,4 +81,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__ . '/auth.php';
+Route::get('/cart', function () {
+    return view('redirecTo.storefront.frontend.cart');
+})->name('cart');
+
+require __DIR__.'/auth.php';
