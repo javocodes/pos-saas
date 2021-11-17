@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Product;
 
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
 use Livewire\Component;
 
-class ProductLive extends Component
+class CreateProduct extends Component
 {
     public Product $product;
 
@@ -30,11 +30,6 @@ class ProductLive extends Component
         $this->product = new Product();
     }
 
-    public function createProduct(): void
-    {
-        //
-    }
-
     public function storeProduct($storeId): void
     {
         $this->validate();
@@ -45,9 +40,9 @@ class ProductLive extends Component
 
     public function render()
     {
-        return view('livewire.product-live', [
+        return view('livewire.product.create-product', [
             'brands' => Brand::all(),
             'categories' => Category::all(),
-        ]);
+        ])->extends('layouts.storeBackend');
     }
 }

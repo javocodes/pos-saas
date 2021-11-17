@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\Product\CreateProduct;
 use App\Http\Livewire\Storefront\Backend\AdminDashboard;
 use App\Http\Livewire\Storefront\Backend\Adminindox;
 use App\Http\Livewire\Storefront\Backend\AdminProfile;
@@ -45,6 +46,9 @@ Route::group(['prefix' => 'storefront', 'as' => 'backend.'], function () {
     Route::get('/backend/store/ViewDetails', ViewDetail::class)
         ->name('viewDetails');
 });
+
+Route::get('/product/create', CreateProduct::class)
+    ->name('product.create');
 
 
 Route::get('/dashboard', function () {
