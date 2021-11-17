@@ -1,14 +1,15 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Product\CreateProduct;
 use App\Http\Livewire\SaleReport\SalesReport;
-use App\Http\Livewire\Storefront\Backend\AdminDashboard;
+use App\Http\Livewire\Storefront\Frontend\Header;
 use App\Http\Livewire\Storefront\Backend\Adminindox;
 use App\Http\Livewire\Storefront\Backend\AdminProfile;
-use App\Http\Livewire\Storefront\Backend\Store\CreateAsscoiate;
-use App\Http\Livewire\Storefront\Backend\Store\CreateStore;
+use App\Http\Livewire\Storefront\Backend\AdminDashboard;
 use App\Http\Livewire\Storefront\Backend\Store\ViewDetail;
-use App\Http\Livewire\Storefront\Frontend\Header;
-use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Storefront\Backend\Store\CreateStore;
+use App\Http\Livewire\Storefront\Backend\Store\CreateAsscoiate;
 
 /*
 |--------------------------------------------------------------------------
