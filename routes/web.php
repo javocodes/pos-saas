@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\SaleReport\SalesReport;
 use App\Http\Livewire\Storefront\Backend\AdminDashboard;
 use App\Http\Livewire\Storefront\Backend\Adminindox;
 use App\Http\Livewire\Storefront\Backend\AdminProfile;
@@ -44,6 +45,10 @@ Route::group(['prefix' => 'storefront', 'as' => 'backend.'], function () {
 
     Route::get('/backend/store/ViewDetails', ViewDetail::class)
         ->name('viewDetails');
+
+    Route::get('/backend/store/ViewSalesReport', SalesReport::class)
+        ->name('SalesReport');
+
 });
 
 
@@ -51,4 +56,4 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
