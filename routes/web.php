@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
+use App\Http\Livewire\Product\CreateProduct;
+=======
 use App\Http\Livewire\SaleReport\SalesReport;
+>>>>>>> 8c71b002e5756267bb836dd03b06ba6052cfb16b
 use App\Http\Livewire\Storefront\Backend\AdminDashboard;
 use App\Http\Livewire\Storefront\Backend\Adminindox;
 use App\Http\Livewire\Storefront\Backend\AdminProfile;
@@ -20,6 +24,28 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+///////////////////////////////// MIDDLEWARES //////////////////////////////////
+
+Route::group(['middleware' => 'admin'], function(){
+    //Admin Routes Go Here
+});
+
+Route::group(['middleware' => 'customer'], function () {
+    //Customer Routes Go Here
+});
+
+Route::group(['middleware' => 'merchant'], function () {
+    //Merchant Routes Go Here
+});
+
+Route::group(['middleware' => 'associate'], function () {
+    //Associate Routes Go Here
+});
+
+////////////////////////////////// MIDDLEWARES ////////////////////////////////////
+
+
 
 Route::get('/', Header::class)->name('index');
 
@@ -50,6 +76,9 @@ Route::group(['prefix' => 'storefront', 'as' => 'backend.'], function () {
         ->name('SalesReport');
 
 });
+
+Route::get('/product/create', CreateProduct::class)
+    ->name('product.create');
 
 
 Route::get('/dashboard', function () {
