@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 use App\Http\Livewire\Product\CreateProduct;
+=======
+use App\Http\Livewire\SaleReport\SalesReport;
+>>>>>>> 8c71b002e5756267bb836dd03b06ba6052cfb16b
 use App\Http\Livewire\Storefront\Backend\AdminDashboard;
 use App\Http\Livewire\Storefront\Backend\Adminindox;
 use App\Http\Livewire\Storefront\Backend\AdminProfile;
@@ -45,6 +49,10 @@ Route::group(['prefix' => 'storefront', 'as' => 'backend.'], function () {
 
     Route::get('/backend/store/ViewDetails', ViewDetail::class)
         ->name('viewDetails');
+
+    Route::get('/backend/store/ViewSalesReport', SalesReport::class)
+        ->name('SalesReport');
+
 });
 
 Route::get('/product/create', CreateProduct::class)
