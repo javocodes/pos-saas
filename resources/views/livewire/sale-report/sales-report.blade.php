@@ -1,32 +1,21 @@
 <div>
-<x-table.table>
-        <x-table.thead>
-            <x-table.table-head>
-                Product Name
-            </x-table.table-head>
+<x-Proximity-Table.table>
+    <x-slot name="thead">
+        <x-Proximity-Table.table-head title="Product Name"/>
+        <x-Proximity-Table.table-head title="SKU"/>
+        <x-Proximity-Table.table-head title="Category"/>
+        <x-Proximity-Table.table-head title="Quantity"/>
+        <x-Proximity-Table.table-head title="Sales Price"/>
+        <x-Proximity-Table.table-head title="Discount"/>
+        <x-Proximity-Table.table-head title="Action"/>
+    </x-slot>
 
-            <x-table.table-head>
-                SKU
-            </x-table.table-head>
+    <x-slot name="tbody">
 
-            <x-table.table-head>
-                Category Name
-            </x-table.table-head>
+        <x-Proximity-Table.table-row>
+            <x-Proximity-Table.table-cell title="Akeem"/>
+        </x-Proximity-Table.table-row>
 
-            <x-table.table-head>
-                Item Quantity
-            </x-table.table-head>
-
-            <x-table.table-head>
-                Discount
-            </x-table.table-head>
-
-            <x-table.table-head>
-               Price
-            </x-table.table-head>
-
-
-        </x-table.thead>
-
-</x-table.table>
+    </x-slot>
+</x-Proximity-Table.table>
 </div>
