@@ -41,7 +41,7 @@ class DatabaseSeeder extends Seeder
             SalesSeeder::class,
             InvoiceSeeder::class,
             CommissionSeeder::class,
-
+            InboxSeeder::class,
         ]);
     }
 }
