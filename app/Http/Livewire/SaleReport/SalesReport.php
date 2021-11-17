@@ -8,7 +8,6 @@ class SalesReport extends Component
 {
     public function render()
     {
-        return view('livewire.sale-report.sales-report')
-            ->extends('layouts.storeBackend');
+        return view('livewire.sale-report.sales-report', ['Product'=>Product::all()])->extends('layouts.storeBackend');
     }
 }
